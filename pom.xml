@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.orieken</groupId>
-    <artifactId>derp-bear-Cucumber-jvm-WebDriver-Junit</artifactId>
+    <artifactId>Java-Examples</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
     <name>Derp-Bear Examples in Java</name>

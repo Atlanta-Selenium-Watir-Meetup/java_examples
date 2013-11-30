@@ -8,10 +8,16 @@ import cucumber.api.java.en.When;
 import org.apache.commons.lang3.text.WordUtils;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -33,18 +39,19 @@ public class DerpBearStepDefs {
 
 
     @Before
-    public void andSoItBegins() {
+    public void andSoItBegins() throws MalformedURLException {
         driver = new ChromeDriver();
     }
 
     @After
     public void andThenItEnds() {
         driver.close();
+        driver.quit();
     }
 
     @Given("^I hop$")
     public void I_hop() throws Throwable {
-        driver.navigate().to("http://localhost:9393");
+        driver.navigate().to("http://derp-bear.herokuapp.com");
     }
 
     @When("^I land$")
